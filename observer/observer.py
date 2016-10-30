@@ -5,14 +5,12 @@ from subject import Subject
 
 class Observer:
 
-    name = None
-
-    def __init__(self, subject ,name):
+    def __init__(self, subject, name=None):
         self.name = name
         self.subject = subject
 
-    def update():
-        print('update observer {}'.format(name))
+    def update(self):
+        print('update observer {}'.format(self.name))
 
 if __name__ == "__main__":
     subject = Subject()
