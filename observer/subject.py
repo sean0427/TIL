@@ -10,7 +10,7 @@ class Subject:
         self.observers.append(observer)
 
     def detach(self, observer):
-        observers.remove(observer)
+        self.observers.remove(observer)
 
     def notify(self):
         for observer in self.observers:

@@ -14,5 +14,14 @@ class Observer:
 
 if __name__ == "__main__":
     subject = Subject()
-    subject.attach(Observer(subject, 'A'))
+
+    for name in ['a', 'b', 'c', 'd', 'c']:
+        subject.attach(Observer(subject, name))
+    
+    ob = Observer(subject, "ob")
+
+    subject.attach(ob)
+    subject.notify()
+
+    subject.detach(ob)
     subject.notify()
