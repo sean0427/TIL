@@ -25,3 +25,10 @@ if __name__ == "__main__":
 
     subject.detach(ob)
     subject.notify()
+
+    try:
+        subject.attach(list())
+    except Exception as error:
+        print(error)
+
+    subject.notify()

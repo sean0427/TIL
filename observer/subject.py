@@ -7,7 +7,10 @@ class Subject:
         self.observers = list()
 
     def attach(self, observer):
-        self.observers.append(observer)
+        if hasattr(observer, 'update'):
+            self.observers.append(observer)
+        else:
+            raise Exception('Subject', 'Error observer')
 
     def detach(self, observer):
         self.observers.remove(observer)
