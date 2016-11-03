@@ -19,7 +19,7 @@ class Originator:
         self.memento = memo
 
     def load(self):
-        return self.memnto
+        return self.memento
 
     def display_status(self):
         print(self.memento)
@@ -39,5 +39,8 @@ if __name__ == "__main__":
     memo = Memento(30, 20)
     print(memo)
 
-    admin = Originator()
-    client = Caretaker()
+    admin = Originator(Memento(10,20))
+    admin.display_status()
+
+    client = Caretaker(admin.load())
+    client.display_status()
