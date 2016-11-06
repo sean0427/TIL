@@ -18,12 +18,15 @@ if __name__ == "__main__":
     for name in ['a', 'b', 'c', 'd', 'c']:
         subject.attach(Observer(subject, name))
     
-    ob = Observer(subject, "ob")
+    observer_e = Observer(subject, 'e')
+    observer_f = Observer(subject, 'f')
 
-    subject.attach(ob)
+    subject.attach(observer_e)
     subject.notify()
 
-    subject.detach(ob)
+    subject.attach(observer_f)
+
+    subject.detach(observer_e)
     subject.notify()
 
     try:
