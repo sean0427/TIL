@@ -3,7 +3,7 @@
 
 class Iterator:
 
-    def __init__(self,collection):
+    def __init__(self, collection):
         self.collection = collection
         self.index = 0
 
