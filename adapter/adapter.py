@@ -17,5 +17,5 @@ class Adapter:
         self.adaptee.do_something();
 
 if __name__ == "__main__":
-    a = Adapter(Adaptee())
-    a.do_something()
+    adapter = Adapter(Adaptee())
+    adapter.do_something()
