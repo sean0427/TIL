@@ -3,12 +3,12 @@
 
 class Memento:
 
-    def __init__(self, hp=100, mp=100):
-        self.hp = hp
-        self.mp = mp
+    def __init__(self, arg=100, arg2=100):
+        self.arg = arg
+        self.arg2 = arg2
 
     def __str__(self):
-        return '{} {}'.format(self.hp, self.mp)
+        return '{} {}'.format(self.arg, self.arg2)
 
 class Originator:
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     memo = Memento(30, 20)
     print(memo)
 
-    admin = Originator(Memento(10,20))
+    admin = Originator(Memento(10, 20))
     admin.display_status()
 
     client = Caretaker(admin.load())
