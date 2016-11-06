@@ -9,7 +9,7 @@ class Composite:
 
     def add(self, name, node):
         if name is None:
-            raise ('not input name')
+            raise('not input name')
         
         self.children[name] = node
 
@@ -39,16 +39,16 @@ class Leaf(Composite):
         print('--' + self.name)
 
 if __name__ == '__main__':
-    compositeA = Composite('A')
-    compositeA.display()
+    composite_a = Composite('A')
+    composite_a.display()
 
-    compositeB = Composite('B')
-    compositeA.add('B', compositeB)
-    compositeB.add('leafB', Leaf('leafB'))
-    compositeA.add('leaf', Leaf('leaf'))
-    compositeA.display()
+    composite_b = Composite('B')
+    composite_a.add('B', composite_b)
+    composite_b.add('leaf_b', Leaf('leaf_b'))
+    composite_a.add('leaf', Leaf('leaf'))
+    composite_a.display()
 
-    compositeB.remove('leafB')
-    compositeB.display()
+    composite_b.remove('leaf_b')
+    composite_b.display()
 
-    compositeA.display()
+    composite_a.display()
