@@ -20,6 +20,7 @@ class State1:
             print('state1')
         else:
             context.state = State2()
+            context.request()
 
 class State2:
 
