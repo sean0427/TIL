@@ -2,28 +2,30 @@
 # -*- conding: utf-8 -*- 
 
 def heapsort(array):
-    for i in range(len(array) // 2):
-        array = heapify(array, i)
+    for i in range(len(array)-1, -1, -1):
+        heapify(array, i)
 
 def heapify(array, i):
-    left = 2*(i+1)-1
-    right = 2*(i+1)
-    if right <= len(array):
-        largest = i
-        if array[left] > array[largest]:
-            largest = left
+    largest = i 
+    while largest <= len(array):
+        first = largest
+        left = 2 * first + 1
+        right = 2 * first + 2
 
-        if array[right] > array[largest]:
-            largest = right
+        if right < len(array) and array[right] > array[largest]:
+            largest = right 
 
-        if largest is not i:
-            temp = array[i]
-            array[i] = array[largest]
+        if left < len(array) and array[left] > array[largest]:
+            largest = left 
+
+        if largest is not first:
+            temp = array[first]
+            array[first] = array[largest]
             array[largest] = temp
-
-    return array
+        else:
+            return
 
 if __name__ == '__main__':
-    a = [3, 2, 9]
-    a = heapsort(a)
+    a = [3, 2, 9, 1, 20, 10]
+    heapsort(a)
     print(a)
