@@ -1,0 +1,8 @@
+
+------------JS
+var sort = function(a, b) {
+    return a > b;
+}
+
+list.sort(sort);
+
