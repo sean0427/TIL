@@ -1,0 +1,28 @@
+use that to do IPC, use IBinder create messenger, than It can use handlerMessage.
+
+---- on Serivce --
+
+public IBinder onBind(...){
+    return Binder...
+}
+
+
+---- on Activity ----
+
+        ServiceConnection connection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                serviceMessenger = new Messenger(service);
+                messageBound = true;
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                serviceMessenger = null;
+                messageBound = false;
+            }
+        };
+
+        bindService(intent, connection, BIND_AUTO_CREATE);
+
+
