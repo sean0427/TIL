@@ -1,0 +1,1 @@
+:$s/origin/replace/g

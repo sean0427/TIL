@@ -1,0 +1,4 @@
+
+--- on View ---
+
+view#setLayertype(View.LAYER_TYPE_SOFTWARE, null);
