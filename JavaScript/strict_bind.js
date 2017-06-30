@@ -19,9 +19,9 @@ let test_module = {
         return this.x;
     },
     arrowAddX: () => {
-        console.log(this)
+        console.log(this);
         this.x += 1;
-        return this.x
+        return this.x;
     },
 };
 
@@ -35,22 +35,25 @@ bound();
 assert.equal(2, test_module.x);
 assert.equal(201, y.x);
 
+//ref method, not effect to obejct
 //this = gobal
 var m_b = test_module.addX;
-//fail case x is undefined,
+
+//it fail, becase x is undefined,
+let hasError = false;
 try {
     m_b();
 } catch (e) {
-    assert(true);
+    hasError = true;
 }
-
+assert(hasError);
 assert.equal(100, x);
 assert.equal(201, y.x);
 
 
 //[arrow_function](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 // **arrow function's this always who call method,**
-var a_b = test_module.arrowAddX
+var a_b = test_module.arrowAddX;
 
 this.x = 300;
 assert.equal(2, test_module.x);
