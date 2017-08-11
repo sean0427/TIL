@@ -9,6 +9,11 @@ call vundle#rc()
 " let Vundle manage Vundle, required 
 Plugin 'gmarik/Vundle.vim' 
 
+
+" Status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+
 " highlight the matched tag 
 Plugin 'gregsexton/MatchTag' 
 
@@ -36,7 +41,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'othree/html5.vim' 
 Plugin 'syntax/css.vim' 
 Plugin 'elzr/vim-json' 
- 
+Plugin 'scrooloose/syntastic'
+
 filetype plugin indent on    " required 
 
 " To ignore plugin indent changes, instead use: 
@@ -59,14 +65,31 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-Plugin 'vim-indent-guides'
-
 set expandtab 
 set tabstop=4 
 set shiftwidth=4
+set number
 
 let g:jsx_ext_required = 0 
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 set mouse=n
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+let g:javascript_conceal_arrow_function = "⇒"
+
+Plugin 'nathanaelkane/vim-indent-guides'
+
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=DarkGray
+hi IndentGuidesEven ctermbg=Black
+
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+
