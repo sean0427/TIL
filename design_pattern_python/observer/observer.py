@@ -10,7 +10,7 @@ class Observer:
         self.subject = subject
 
     def update(self):
-        print('update observer {}'.format(self.name))
+        print('update observer {}, subject {}'.format(self.name, self.subject.state))
 
 if __name__ == "__main__":
     subject = Subject()
@@ -35,3 +35,6 @@ if __name__ == "__main__":
         print(error)
 
     subject.notify()
+    
+    subject.setState(1)
+    subject.setState(2)

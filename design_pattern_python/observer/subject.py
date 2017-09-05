@@ -5,6 +5,11 @@ class Subject:
 
     def __init__(self):
         self.observers = list()
+        self.state = 0 
+
+    def setState(self, state):
+        self.state = state
+        self.notify()
 
     def attach(self, observer):
         if hasattr(observer, 'update'):
